@@ -12,10 +12,10 @@ module.exports = function main(number) {
         9: ["._.", "|_|", "..|"]
     }
     
+    //传参进来的数字 先拆分
     function splitNum(number) {
         return number.split("");
     }
-    
     
     function matchingStyle(numbers, stringsStyle) {
         let stringSet = [];
@@ -31,8 +31,8 @@ module.exports = function main(number) {
         return stringSet;
     }
     
+    // 格式化打印输入的数字
     function printDigit(stringSet) {
-    
         return stringSet.reduce((pString, cString) => {
             pString += cString;
             return pString;
@@ -41,5 +41,7 @@ module.exports = function main(number) {
     
     let numbers = splitNum(number);
     let stringSet = matchingStyle(numbers, stringsStyles);
-    console.log(printDigit(stringSet));
+    let stringResult = printDigit(stringSet)
+    console.log(stringResult);
+    return stringResult
 };
